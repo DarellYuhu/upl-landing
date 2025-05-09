@@ -2,7 +2,7 @@ import { Input } from "@/components/ui/input";
 import { InfiniteSlider } from "@/components/upl/infinite-slider";
 import { WhatsappButton } from "@/components/upl/whatsapp-button";
 import { ArrowRight, Copyright, Mail, Phone } from "lucide-react";
-import Image, { getImageProps } from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import { FaCircle } from "react-icons/fa";
 import { TbArrowDownDashed } from "react-icons/tb";
