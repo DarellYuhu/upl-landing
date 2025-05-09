@@ -7,36 +7,18 @@ import Link from "next/link";
 import { FaCircle } from "react-icons/fa";
 import { TbArrowDownDashed } from "react-icons/tb";
 
-function getBackgroundImage(srcSet = "") {
-  const imageSet = srcSet
-    .split(", ")
-    .map((str) => {
-      const [url, dpi] = str.split(" ");
-      return `url("${url}") ${dpi}`;
-    })
-    .join(", ");
-  return `image-set(${imageSet})`;
-}
-
 export default function Home() {
-  const {
-    props: { srcSet },
-  } = getImageProps({
-    alt: "",
-    width: 500,
-    height: 500,
-    src: "/assets/images/upl-logo-color.png",
-  });
-  const backgroundImage = getBackgroundImage(srcSet);
-
   return (
     <div className="text-white">
       <div
-        style={{ backgroundImage }}
+        style={{
+          backgroundImage: "url('/assets/images/image-2.png')",
+          backgroundSize: "cover",
+        }}
         className="h-[calc(100dvh-68px)] relative"
       >
         <div className="bg-linear-to-t from-blue-500 to-transparent from-8% to-80% h-full pt-10 px-5 justify-between flex-col flex">
-          <div className="bg-black space-y-4">
+          <div className="space-y-4">
             <h1 className="font-semibold text-xl">ULU PLASTIK LATERSIA</h1>
             <h2 className="font-bold text-4xl">
               Daur ulang, <br />
