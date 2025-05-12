@@ -11,19 +11,22 @@ import {
 } from "@/components/ui/sidebar";
 import Image from "next/image";
 import Link from "next/link";
+import { SidebarCloseBtn } from "./sidebar-close-btn";
 
 export const AppSidebar = () => {
   return (
     <Sidebar>
-      <SidebarHeader></SidebarHeader>
-      <SidebarContent>
+      <SidebarHeader>
+        <SidebarCloseBtn />
+      </SidebarHeader>
+      <SidebarContent className="mt-9">
         <SidebarGroup>
           <SidebarGroupContent>
-            <SidebarMenu className="space-y-2">
+            <SidebarMenu className="space-y-4">
               {menus.map((menu, idx) => (
                 <SidebarMenuItem key={idx}>
                   <Link href={menu.url}>
-                    <SidebarMenuButton className="text-green-400 border-green-400 border-y-[1.5px] rounded-none font-semibold hover:text-green-200">
+                    <SidebarMenuButton className="text-[#35e300]  border-[#35e300] border-y-[1.5px] rounded-none font-semibold text-lg py-5 hover:text-green-200">
                       {menu.title}
                     </SidebarMenuButton>
                   </Link>
@@ -65,7 +68,7 @@ const menus = [
     url: "/proses-produksi",
   },
   {
-    title: "HUBUNGAN KAMI",
-    url: "/hubungan-kami",
+    title: "HUBUNGI KAMI",
+    url: "/hubungi-kami",
   },
 ];
