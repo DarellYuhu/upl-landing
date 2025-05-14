@@ -29,9 +29,9 @@ export default async function DetailProdukPage({
               <Image
                 src={item.url}
                 alt={item.name}
-                width={300}
-                height={300}
-                className="w-full h-[280px]"
+                width={item.width}
+                height={item.height}
+                className="w-full h-[280px] object-cover"
               />
             </CarouselItem>
           ))}
