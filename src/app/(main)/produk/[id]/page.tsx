@@ -27,7 +27,7 @@ export default async function DetailProdukPage({
           {product.data.images.map((item, idx) => (
             <CarouselItem key={idx}>
               <Image
-                src={`${process.env.STRAPI_BASE_API}${item.url}`}
+                src={item.url}
                 alt={item.name}
                 width={300}
                 height={300}
