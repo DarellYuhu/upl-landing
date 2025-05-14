@@ -70,8 +70,8 @@ export default function TentangPerusahaanPage() {
             key={i}
             className="flex flex-row gap-2 text-[#0070bf] text-sm font-bold items-center"
           >
-            <FaCircle />
-            <p>Ulu Plastik Latersia</p>
+            <FaCircle size={10} />
+            <p>PT. ULU PLASTIK LATERSIA</p>
           </div>
         ))}
       </InfiniteSlider>
@@ -108,7 +108,7 @@ export default function TentangPerusahaanPage() {
         </div>
       </div>
 
-      <div className="px-7">
+      <div className="px-7 mt-[100px]">
         <div className="text-center text-2xl text-[#0070bf]">
           <h3>LINIMASA</h3>
           <h1 className="font-bold">ULU PLASTIK LATERSIA</h1>

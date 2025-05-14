@@ -3,6 +3,7 @@ import { AppSidebar } from "@/components/upl/app-sidebar";
 import { SidebarTrigger } from "@/components/upl/sidebar-trigger";
 import { Copyright } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { ReactNode } from "react";
 
 export default function MainLayout({ children }: { children: ReactNode }) {
@@ -10,13 +11,15 @@ export default function MainLayout({ children }: { children: ReactNode }) {
     <SidebarProvider>
       <AppSidebar />
       <div className="w-full">
-        <header className="flex flex-row justify-between items-center p-4">
-          <Image
-            src={"/assets/images/upl-logo-color.png"}
-            alt="upl_logo"
-            width={50}
-            height={50}
-          />
+        <header className="flex flex-row justify-between items-center p-4 h-20">
+          <Link href={"/"}>
+            <Image
+              src={"/assets/images/upl-logo-color.png"}
+              alt="upl_logo"
+              width={50}
+              height={50}
+            />
+          </Link>
           <SidebarTrigger />
         </header>
         {children}

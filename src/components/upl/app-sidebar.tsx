@@ -12,6 +12,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { SidebarCloseBtn } from "./sidebar-close-btn";
+import { Separator } from "../ui/separator";
 
 export const AppSidebar = () => {
   return (
@@ -22,15 +23,19 @@ export const AppSidebar = () => {
       <SidebarContent className="mt-9">
         <SidebarGroup>
           <SidebarGroupContent>
-            <SidebarMenu className="space-y-4">
+            <SidebarMenu className="space-y-2">
               {menus.map((menu, idx) => (
-                <SidebarMenuItem key={idx}>
-                  <Link href={menu.url}>
-                    <SidebarMenuButton className="text-[#35e300]  border-[#35e300] border-y-[1.5px] rounded-none font-semibold text-lg py-5 hover:text-green-200">
-                      {menu.title}
-                    </SidebarMenuButton>
-                  </Link>
-                </SidebarMenuItem>
+                <div key={idx}>
+                  {idx === 0 && <Separator className="bg-[#35e300] mb-2" />}
+                  <SidebarMenuItem>
+                    <Link href={menu.url}>
+                      <SidebarMenuButton className="text-[#35e300] rounded-none font-semibold text-lg py-5 hover:text-green-200">
+                        {menu.title}
+                      </SidebarMenuButton>
+                    </Link>
+                  </SidebarMenuItem>
+                  <Separator className="bg-[#35e300]" />
+                </div>
               ))}
             </SidebarMenu>
           </SidebarGroupContent>

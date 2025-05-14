@@ -7,7 +7,7 @@ import Link from "next/link";
 import { FaCircle } from "react-icons/fa";
 import { TbArrowDownDashed } from "react-icons/tb";
 
-export default function Home() {
+export default async function Home() {
   return (
     <>
       <div className="text-white relative">
@@ -22,9 +22,9 @@ export default function Home() {
             <div className="space-y-4">
               <h1 className="font-semibold text-xl">ULU PLASTIK LATERSIA</h1>
               <h2 className="font-bold text-4xl/15">
-                <span className="bg-[#0070bf]/60 px-3">Daur ulang,</span> <br />
-                <span className="bg-[#0070bf]/60 px-3">Produksi</span> <br />
-                <span className="bg-[#0070bf]/60 px-3">
+                <span className="bg-[#5cc3ff]/65 px-3">Daur ulang,</span> <br />
+                <span className="bg-[#5cc3ff]/65 px-3">Produksi</span> <br />
+                <span className="bg-[#5cc3ff]/65 px-3">
                   Biji Plastik & Rafia.
                 </span>
               </h2>
@@ -152,7 +152,7 @@ export default function Home() {
               backgroundRepeat: "no-repeat",
             }}
           >
-            <div className="w-full h-full p-10 space-y-4">
+            <div className="w-full h-[250px] flex items-center flex-col justify-center px-11 space-y-4">
               <p className="text-center font-bold text-xl text-blue-300/80">
                 Biji plastik yang kami produksi, di proses dengan mesin
                 berteknologi tinggi dari Cina.

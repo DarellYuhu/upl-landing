@@ -6,11 +6,11 @@ export const WhatsappButton = () => {
   return (
     <Button
       asChild
-      className="bg-[#25D366] hover:bg-[#25D366]/70 fixed right-10 bottom-20 rounded-full size-12"
+      className="bg-[#25D366] hover:bg-[#25D366]/70 fixed right-10 bottom-20 rounded-full size-16"
       size={"icon"}
     >
       <Link href={"https://wa.me/6282143203848"} target="_blank">
-        <BsWhatsapp className="size-6" />
+        <BsWhatsapp className="size-9" />
       </Link>
     </Button>
   );
