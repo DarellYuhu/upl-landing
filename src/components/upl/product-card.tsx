@@ -11,7 +11,7 @@ export const ProductCard = ({ item }: Props) => {
     <Link href={`/produk/${item.documentId}`}>
       <div className="rounded-xl overflow-hidden">
         <Image
-          src={`${process.env.STRAPI_BASE_API}${item.images[0].url}`}
+          src={item.images[0].url}
           alt={item.images[0].name}
           width={300}
           height={300}
