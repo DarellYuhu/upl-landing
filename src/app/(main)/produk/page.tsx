@@ -1,9 +1,16 @@
 import { ContactUs } from "@/components/upl/contact-us";
 import { InfiniteSlider } from "@/components/upl/infinite-slider";
 import { ProductCard } from "@/components/upl/product-card";
+import { AxiosClient } from "@/lib/axios-client";
+import { Product, StrapiRes } from "@/types";
 import { FaCircle } from "react-icons/fa";
 
-export default function ProdukPage() {
+export default async function ProdukPage() {
+  const { data: products } = await AxiosClient.get<StrapiRes<Product[]>>(
+    "/api/products",
+    { params: { populate: ["images"] } }
+  );
+
   return (
     <div>
       <div className="bg-[url('/assets/images/image-9.png')] bg-no-repeat w-full bg-cover py-15 px-10 text-white">
@@ -11,7 +18,7 @@ export default function ProdukPage() {
         <h1 className="text-5xl font-semibold">PRODUK UNGGULAN</h1>
       </div>
       <div className="p-7 space-y-7">
-        {data.map((item, idx) => (
+        {products.data.map((item, idx) => (
           <ProductCard key={idx} item={item} />
         ))}
       </div>
