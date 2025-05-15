@@ -1,3 +1,27 @@
+export type CompanyProfiles = {
+  id: number;
+  documentId: string;
+  company_name: string;
+  short_name: string;
+  abbreviate_name: string;
+  phone: string;
+  address: string;
+  email: string;
+  description: string;
+  vision: string;
+  mission: string;
+};
+
+export type ProducionProcess = {
+  id: number;
+  documentId: string;
+  name: string;
+  description: string;
+  image: Image;
+  createdAt: string;
+  updatedAt: string;
+};
+
 export type Product = {
   id: number;
   documentId: string;
