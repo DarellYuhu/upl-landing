@@ -11,9 +11,6 @@ export const metadata: Metadata = {
   title: "ULU PLASTIK LATERSIA",
   description:
     "PT. Ulu Plastik Latersia adalah perusahaan daur ulang plastik di Jawa Timur yang memproduksi biji plastik dan tali rafia berkualitas untuk industri manufaktur",
-  icons: {
-    icon: "/assets/images/upl-logo-color.png",
-  },
 };
 
 export default function RootLayout({
