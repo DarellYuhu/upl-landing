@@ -17,7 +17,7 @@ export default async function ProdukPage() {
         <p className="text-sm">MARI LIHAT DAN TELUSURI</p>
         <h1 className="text-5xl font-semibold">PRODUK UNGGULAN</h1>
       </div>
-      <div className="p-7 space-y-7">
+      <div className="p-7 space-y-11">
         {products.data.map((item, idx) => (
           <ProductCard key={idx} item={item} />
         ))}
