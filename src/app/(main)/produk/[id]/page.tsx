@@ -21,7 +21,7 @@ export default async function DetailProdukPage({
     { params: { populate: ["images"] } }
   );
   return (
-    <div className="bg-[#0070bf] text-white">
+    <div className="bg-[#0070bf]">
       <Carousel>
         <CarouselContent>
           {product.data.images.map((item, idx) => (
@@ -40,7 +40,7 @@ export default async function DetailProdukPage({
         <CarouselNext className="right-5" />
       </Carousel>
 
-      <div className="p-3">
+      <div className="p-3 text-white">
         <h1 className="text-2xl font-bold">{product.data.name}</h1>
 
         <p className="mt-5">{product.data.description}</p>

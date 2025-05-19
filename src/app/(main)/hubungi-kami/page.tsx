@@ -1,5 +1,6 @@
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { sendContact } from "@/send-contact";
 import { Mail, Phone } from "lucide-react";
 import { IoSend } from "react-icons/io5";
 
@@ -45,27 +46,40 @@ export default function HubungiKamiPage() {
           KONTAK KAMI
         </div>
 
-        <div className="space-y-4 shadow-2xl p-4 rounded-xl">
-          <Input placeholder="Nama" className="p-6 placeholder:text-white/60" />
+        <form
+          action={sendContact}
+          className="space-y-4 shadow-2xl p-4 rounded-xl"
+        >
           <Input
+            name="nama"
+            placeholder="Nama"
+            className="p-6 placeholder:text-white/60"
+          />
+          <Input
+            name="namaPerusahaan"
             placeholder="Nama Perusahaan"
             className="p-6 placeholder:text-white/60"
           />
           <Input
+            name="noHp"
             placeholder="Nomor HP"
             className="p-6 placeholder:text-white/60"
           />
           <Textarea
+            name="pesan"
             placeholder="Pesan"
             rows={5}
             className="p-6 placeholder:text-white/60"
           />
 
-          <button className="bg-white text-[#0070bf] hover:text-[#0070bf]/60 px-3 rounded-md text-lg font-bold flex flex-row p-2 items-center gap-2 w-full justify-center">
+          <button
+            className="bg-white text-[#0070bf] hover:text-[#0070bf]/60 px-3 rounded-md text-lg font-bold flex flex-row p-2 items-center gap-2 w-full justify-center"
+            type="submit"
+          >
             Kirim
             <IoSend className="size-5" />
           </button>
-        </div>
+        </form>
       </div>
     </div>
   );

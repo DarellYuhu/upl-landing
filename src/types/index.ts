@@ -1,3 +1,11 @@
+export type Timeline = {
+  documentId: string;
+  title: string;
+  createdAt: string;
+  updatedAt: string;
+  image: Image;
+};
+
 export type CompanyProfiles = {
   id: number;
   documentId: string;

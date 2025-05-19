@@ -2,7 +2,7 @@ import { ContactUs } from "@/components/upl/contact-us";
 import { InfiniteSlider } from "@/components/upl/infinite-slider";
 import { LinimasaCarousel } from "@/components/upl/linimasa-carousel";
 import { AxiosClient } from "@/lib/axios-client";
-import { CompanyProfiles, StrapiRes } from "@/types";
+import { CompanyProfiles, StrapiRes, Timeline } from "@/types";
 import Image from "next/image";
 import { FaCircle } from "react-icons/fa";
 import Markdown from "react-markdown";
@@ -11,6 +11,12 @@ export default async function TentangPerusahaanPage() {
   const { data: companyProfiles } = await AxiosClient.get<
     StrapiRes<CompanyProfiles>
   >("/api/company-detail");
+  const { data: timeline } = await AxiosClient.get<StrapiRes<Timeline[]>>(
+    "/api/timelines",
+    {
+      params: { populate: ["image"] },
+    }
+  );
   return (
     <div>
       <div className="bg-[url('/assets/images/image-5.png')] bg-no-repeat text-center w-full bg-cover py-20 px-18 text-white  space-y-2">
@@ -77,7 +83,7 @@ export default async function TentangPerusahaanPage() {
           <h1 className="font-bold">ULU PLASTIK LATERSIA</h1>
         </div>
       </div>
-      <LinimasaCarousel />
+      <LinimasaCarousel items={timeline.data} />
 
       <InfiniteSlider className="bg-white p-2" speed={30} reverse>
         {Array.from({ length: 5 }).map((_, i) => (

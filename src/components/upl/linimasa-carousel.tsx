@@ -9,20 +9,24 @@ import {
 } from "@/components/ui/carousel";
 import Image from "next/image";
 import Autoplay from "embla-carousel-autoplay";
+import { Timeline } from "@/types";
 
-export const LinimasaCarousel = () => {
+export const LinimasaCarousel = ({ items }: { items: Timeline[] }) => {
   return (
     <Carousel plugins={[Autoplay({ delay: 5000 })]} opts={{ loop: true }}>
       <CarouselContent className="h-60">
-        {data.map((item, idx) => (
-          <CarouselItem key={idx}>
+        {items.map((item, idx) => (
+          <CarouselItem key={idx} className="relative">
             <Image
-              src={item.uri}
+              src={item.image.url}
               alt={`image-${idx}`}
               width={300}
               height={300}
               className="w-full h-full object-cover"
             />
+            <p className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white font-bold text-xl text-center">
+              {item.title}
+            </p>
           </CarouselItem>
         ))}
       </CarouselContent>
@@ -31,15 +35,3 @@ export const LinimasaCarousel = () => {
     </Carousel>
   );
 };
-
-const data = [
-  {
-    uri: "/assets/images/image-1.png",
-  },
-  {
-    uri: "/assets/images/image-2.png",
-  },
-  {
-    uri: "/assets/images/image-3.png",
-  },
-];

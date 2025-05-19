@@ -1,4 +1,5 @@
 import { Input } from "@/components/ui/input";
+import { sendContact } from "@/send-contact";
 import { Mail, Phone } from "lucide-react";
 
 export const ContactUs = () => {
@@ -16,12 +17,34 @@ export const ContactUs = () => {
         <p className="italic text-sm">Info lebih lanjut?</p>
         <p className="text-xl font-bold">Hubungi Kami</p>
       </div>
-      <div className="space-y-2 w-2/4">
-        <Input className="bg-white" type="text" placeholder="Nama" />
-        <Input className="bg-white" type="email" placeholder="Email" />
-        <Input className="bg-white" type="text" placeholder="Perusahaan" />
-        <button className="bg-[#0070bf] px-3 rounded-full">Kirim</button>
-      </div>
+      <form action={sendContact} className="space-y-2 w-2/4 text-black">
+        <Input
+          name="nama"
+          className="bg-white"
+          type="text"
+          placeholder="Nama"
+          required
+        />
+        <Input
+          name="email"
+          className="bg-white"
+          type="email"
+          placeholder="Email"
+          required
+        />
+        <Input
+          name="namaPerusahaan"
+          className="bg-white"
+          type="text"
+          placeholder="Perusahaan"
+        />
+        <button
+          className="bg-[#0070bf] px-3 rounded-full text-white"
+          type="submit"
+        >
+          Kirim
+        </button>
+      </form>
       <div>
         <h1 className="font-bold text-xl">PT ULU PLASTIK LATERSIA</h1>
         <p className="text-sm">
